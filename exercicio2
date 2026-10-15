@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class exercicio2 {
+    static void main() {
+        Scanner sc = new Scanner(System.in);
+        String resposta;
+
+        do {
+            System.out.println("Digite um número inteiro");
+            int numero = sc.nextInt();
+
+            System.out.println("Tabuada do " + numero + ":");
+            for (int i = 0; i <= 10; i++){
+                System.out.println(numero + " x " + i + " = " + (numero * i));
+            }
+
+            System.out.println("Deseja continuar outra tabuada? (S/N)");
+            resposta = sc.next();
+        }while (resposta.equalsIgnoreCase("s"));
+
+        System.out.println("Programa encerrado");
+    }
+}
