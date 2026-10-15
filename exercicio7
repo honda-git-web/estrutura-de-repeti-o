@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class exercicio7 {
+    static void main() {
+        Scanner sc = new Scanner(System.in);
+
+        int salarioMinimo = 1500;
+        int dependentes;
+        double renda, desconto, rendaLiquida, imposto;
+        String resposta;
+
+        do {
+            System.out.println("Digite o número de dependentes");
+            dependentes = sc.nextInt();
+
+            System.out.println("Digite sua renda mensal: ");
+            renda = sc.nextDouble();
+
+            desconto = dependentes * (salarioMinimo * 0.05);
+            rendaLiquida = renda - desconto;
+
+            if (rendaLiquida <= 2 * salarioMinimo){
+                imposto = 0;
+            } else if (rendaLiquida <= 3 * salarioMinimo) {
+                imposto = rendaLiquida * 0.05;
+            } else if (rendaLiquida <= 5 * salarioMinimo) {
+                imposto = rendaLiquida * 0.10;
+            } else if (rendaLiquida <= 7 * salarioMinimo) {
+                imposto = rendaLiquida * 0.15;
+            } else {
+                imposto = rendaLiquida * 0.20;
+            }
+            System.out.println("\n Resultado ");
+            System.out.printf("Desconto por dependentes: R$ %.2f%n", desconto);
+            System.out.printf("Renda líquida: R$ %.2f%n", rendaLiquida);
+            System.out.println("\n Deseja continuar outro contribuinte: (S/N)");
+            resposta = sc.next();
+        } while (resposta.equalsIgnoreCase("s"));
+
+        System.out.println("Programa encerrado");
+    }
