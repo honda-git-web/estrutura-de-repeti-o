@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class exercicio6 {
+    static void main() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite o valor de n: ");
+        int n = sc.nextInt();
+
+        if (n <= 0){
+            System.out.println("Informe um valor de n maior que zero");
+        }else {
+            double y = 0;
+
+            for (int i = 1; i <= n; i++){
+                y += 1.0 / i;
+            }
+            System.out.println("y = " + y);
+        }
+    }
+}
