@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class exercicio9 {
+    static void main() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite um número inteiro e positivo");
+        int numero = sc.nextInt();
+
+        if (numero <= 0){
+            System.out.println("Digite um número positivo");
+        }else {
+            boolean primo = numero > 1;
+
+            for (int i = 2; i * i <= numero && primo; i++){
+                if (numero % i == 0){
+                    primo = false;
+                }
+            }
+            if (primo){
+                System.out.println(numero + " é primo");
+            } else {
+                System.out.println(numero + " não é primo");
+            }
+        }
+    }
+}
