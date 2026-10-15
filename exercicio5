@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class exercicio5 {
+    static void main() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Quantos termos da série de Fibonacci deseja ver?");
+        int quantidade = sc.nextInt();
+
+        if (quantidade <= 0){
+            System.out.println("Informe uma quantidade maior que zero");
+        }else {
+            long anterior = 1;
+            long atual = 1;
+
+            for (int i = 1; i <= quantidade; i++){
+                System.out.println(anterior + " ");
+                long proximo = anterior + atual;
+                anterior = atual;
+                atual = proximo;
+            }
+            System.out.println();
+        }
+    }
+}
